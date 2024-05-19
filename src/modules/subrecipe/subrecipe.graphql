@@ -1,0 +1,22 @@
+type Query {
+    getSubrecipes: [Subrecipe]
+}
+
+type Mutation {
+    createSubrecipe( input: SubrecipeData ): Subrecipe
+    editSubrecipe( id: ID, input: SubrecipeDataEdit ): Subrecipe
+    deleteSubrecipe( id: ID ): Subrecipe
+}
+
+type Subrecipe {
+    id: ID!
+    description: String
+}
+
+input SubrecipeData {
+    description: String
+}
+
+input SubrecipeDataEdit {
+    description: String
+}

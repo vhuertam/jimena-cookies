@@ -1,0 +1,23 @@
+type Query {
+    getRoles: [Role]
+}
+
+type Mutation {
+    createRole( input: RoleData ): Role
+    editRole( id: ID, input: RoleDataEdit ): Role
+    deleteRole( id: ID ): Role
+}
+
+type Role {
+    id: ID!,
+    name: String,
+
+}
+
+input RoleData {
+    name: String
+}
+
+input RoleDataEdit {
+    name: String
+}

@@ -1,0 +1,22 @@
+type Query {
+    getRecipes: [Recipe]
+}
+
+type Mutation {
+    createRecipe( input: RecipeData ): Recipe
+    editRecipe( id: ID, input: RecipeDataEdit ): Recipe
+    deleteRecipe( id: ID ): Recipe
+}
+
+type Recipe {
+    id: ID!
+    description: String
+}
+
+input RecipeData {
+    description: String
+}
+
+input RecipeDataEdit {
+    description: String
+}

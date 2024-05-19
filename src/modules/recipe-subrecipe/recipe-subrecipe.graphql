@@ -1,0 +1,24 @@
+type Query {
+    getRecipesSubrecipes: [RecipeSubrecipe]
+}
+
+type Mutation {
+    createRecipeSubrecipe( input: RecipeSubrecipeData ): RecipeSubrecipe
+    editRecipeSubrecipe( id_rec: ID, id_sub: ID, input: RecipeSubrecipeDataEdit ): RecipeSubrecipe
+    deleteRecipeSubrecipe( id_rec: ID, id_sub: ID ): RecipeSubrecipe
+}
+
+type RecipeSubrecipe {
+    recipe: Recipe
+    subrecipe: Subrecipe
+}
+
+input RecipeSubrecipeData {
+    idRecipe: String
+    idSubrecipe: String
+}
+
+input RecipeSubrecipeDataEdit {
+    idRecipe: String
+    idSubrecipe: String
+}

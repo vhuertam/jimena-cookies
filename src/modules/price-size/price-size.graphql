@@ -1,0 +1,28 @@
+type Query {
+    getPricesSizes: [PriceSize]
+}
+
+type Mutation {
+    createPriceSize( input: PriceSizeData ): PriceSize
+    editPriceSize( id: ID, input: PriceSizeDataEdit ): PriceSize
+    deletePriceSize( id: ID ): PriceSize
+}
+
+type PriceSize {
+    id: ID!
+    price: Float
+    size: String
+    product: Product
+}
+
+input PriceSizeData {
+    price: Float
+    size: String
+    idProduct: String
+}
+
+input PriceSizeDataEdit {
+    price: Float
+    size: String
+    idProduct: String
+}

@@ -1,0 +1,31 @@
+type Query {
+    getUsers: [User]
+}
+
+type Mutation {
+    createUser( input: UserData ): User
+    editUser( id: ID, input: UserDataEdit ): User
+    deleteUser( id: ID ): User
+}
+
+type User {
+    id: ID!,
+    rut: String
+    username: String,
+    password: String,
+    state: Boolean,
+    role: Role
+}
+
+input UserData {
+    rut: String,
+    username: String,
+    password: String,
+    idRole: String
+}
+
+input UserDataEdit {
+    rut: String,
+    username: String,
+    idRole: String
+}

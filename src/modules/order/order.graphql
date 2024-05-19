@@ -1,0 +1,39 @@
+scalar Date
+
+type Query {
+    getOrders: [Order]
+}
+
+type Mutation {
+    createOrder( input: OrderData ): Order
+    editOrder( id: ID, input: OrderDataEdit ): Order
+    deleteOrder( id: ID ): Order
+}
+
+type Order {
+    id: ID!,
+    client: String,
+    dateDelivery: String,
+    hourDelivery: String,
+    totalPrice: Float,
+    state: Boolean,
+    user: User
+}
+
+input OrderData {
+    client: String,
+    dateDelivery: String,
+    hourDelivery: String,
+    totalPrice: Float,
+    state: Boolean,
+    idUser: String
+}
+
+input OrderDataEdit {
+    client: String,
+    dateDelivery: String,
+    hourDelivery: String,
+    totalPrice: Float,
+    state: Boolean,
+    idUser: String
+}
